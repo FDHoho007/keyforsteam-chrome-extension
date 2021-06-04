@@ -1,0 +1,20 @@
+{
+    "name": "KeyForSteam",
+	"description": "Auf Steam werden dir zusätzlich zu deren Preise der billigste Preis bei KeyForSteam sowie ein Link angezeigt.",
+    "version": "0.0.1",
+    "manifest_version": 2,
+	"icons": {"128": "logo.png"},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://store.steampowered.com/*"],
+			"js": ["content.js"]
+		}
+	],
+	"permissions": [
+		"https://www.keyforsteam.de/"
+	]
+}
