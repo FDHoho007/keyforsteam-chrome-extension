@@ -52,7 +52,7 @@ if (location.href.match(APP_REGEX)) {
             img.style.bottom = "-2px";
             img.style.marginLeft = "15px";
             if (f == null || f.classList.contains("discount_final_price"))
-                img.style.marginRight = f.classList.contains("discount_final_price") ? "12px" : "15px";
+                img.style.marginRight = f == null ? "15px" : "12px";
             a2.appendChild(img);
             div.appendChild(a2);
             e.insertBefore(div, e.childNodes[0]);
