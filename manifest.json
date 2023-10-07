@@ -2,11 +2,11 @@
     "name": "KeyForSteam",
 	"description": "Auf Steam werden dir zusätzlich zu deren Preise der billigste Preis bei KeyForSteam sowie ein Link angezeigt.",
     "version": "0.0.1",
-    "manifest_version": 2,
+    "manifest_version": 3,
 	"icons": {"128": "logo.png"},
 	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
+		"service_worker": "service_worker.js",
+		"type": "module"
 	},
 	"content_scripts": [
 		{
@@ -14,7 +14,10 @@
 			"js": ["content.js"]
 		}
 	],
-	"permissions": [
+	"host_permissions": [
 		"https://www.keyforsteam.de/"
+	],
+	"permissions": [
+		"offscreen"
 	]
 }
